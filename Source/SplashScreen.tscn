@@ -1,0 +1,299 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/space_bg.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/upgrades.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Controls.png" type="Texture" id=3]
+[ext_resource path="res://Source/SplashScreen.gd" type="Script" id=4]
+[ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/title_theme.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/logo.svg" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Start"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Controls:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Controls:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Objective:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Objective:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3, 3.5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 12 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("VBox:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 6, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("VBox:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 6, 6.5, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("VBox2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 9, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("VBox2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 9, 9.5, 11.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="SplashScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -403.5
+margin_top = -540.0
+margin_right = 403.5
+margin_bottom = 540.0
+texture = ExtResource( 3 )
+
+[node name="Objective" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -328.5
+margin_top = -360.0
+margin_right = 328.5
+margin_bottom = 360.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -472.0
+margin_top = -454.5
+margin_right = 472.0
+margin_bottom = 496.5
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBox"]
+margin_right = 944.0
+margin_bottom = 505.0
+theme = ExtResource( 6 )
+text = "Stoppage"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiniJam" type="Label" parent="VBox"]
+margin_top = 530.0
+margin_right = 944.0
+margin_bottom = 593.0
+text = "for the Mini Jam #112: Chrono"
+align = 1
+
+[node name="Godot" type="TextureRect" parent="VBox"]
+margin_top = 618.0
+margin_right = 944.0
+margin_bottom = 951.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox2" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -450.0
+margin_top = -540.0
+margin_right = 450.0
+margin_bottom = 540.0
+rect_min_size = Vector2( 900, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creator" type="VBoxContainer" parent="VBox2"]
+margin_top = 169.0
+margin_right = 900.0
+margin_bottom = 369.0
+rect_min_size = Vector2( 900, 200 )
+size_flags_vertical = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creator" type="Label" parent="VBox2/Creator"]
+margin_top = 17.0
+margin_right = 900.0
+margin_bottom = 80.0
+size_flags_vertical = 6
+text = "Creator:"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creator2" type="Label" parent="VBox2/Creator"]
+margin_top = 119.0
+margin_right = 900.0
+margin_bottom = 182.0
+size_flags_vertical = 6
+text = "Noskire"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="VBoxContainer" parent="VBox2"]
+margin_top = 542.0
+margin_right = 900.0
+margin_bottom = 905.0
+size_flags_vertical = 2
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="VBox2/Credits"]
+margin_right = 900.0
+margin_bottom = 63.0
+size_flags_vertical = 6
+text = "Credits:"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits2" type="Label" parent="VBox2/Credits"]
+margin_top = 113.0
+margin_right = 900.0
+margin_bottom = 363.0
+rect_min_size = Vector2( 900, 250 )
+size_flags_vertical = 6
+text = "SFX by soundeffect-lab.info
+
+Disconnected by nihilore.com/"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Start"
+anims/Start = SubResource( 1 )

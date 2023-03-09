@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Source/MenuUI/GameOver.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "update_score"
+} ]
+}
+
+[node name="GameOver" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -350.0
+margin_top = 90.612
+margin_right = 350.0
+margin_bottom = 590.612
+bbcode_enabled = true
+bbcode_text = "[center]Game Over!
+
+Score: %s
+
+HighScore: %s
+(New HighScore)[/center]"
+text = "Game Over!
+
+Score: %s
+
+HighScore: %s
+(New HighScore)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = 15.1527
+margin_right = 200.0
+margin_bottom = 215.153
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="ColorRect/VBox"]
+margin_right = 400.0
+margin_bottom = 87.0
+size_flags_vertical = 3
+text = "Retry"
+
+[node name="Menu" type="Button" parent="ColorRect/VBox"]
+margin_top = 112.0
+margin_right = 400.0
+margin_bottom = 200.0
+size_flags_vertical = 3
+text = "Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 1 )
+
+[connection signal="button_up" from="ColorRect/VBox/Retry" to="." method="_on_Retry_button_up"]
+[connection signal="button_up" from="ColorRect/VBox/Menu" to="." method="_on_Menu_button_up"]

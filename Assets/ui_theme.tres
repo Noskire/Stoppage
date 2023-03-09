@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Lemon_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/grabber.png" type="Texture" id=2]
+[ext_resource path="res://Assets/unchecked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/checked.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0.0352941, 0.180392, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[resource]
+default_font = ExtResource( 1 )
+CheckBox/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+CheckBox/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = ExtResource( 1 )
+CheckBox/icons/checked = ExtResource( 4 )
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = ExtResource( 3 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+HSlider/icons/grabber = ExtResource( 2 )
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource( 2 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource( 3 )
+HSlider/styles/grabber_area_highlight = SubResource( 4 )
+HSlider/styles/slider = SubResource( 2 )

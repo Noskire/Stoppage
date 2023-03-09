@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Disconnected.mp3-a22908f4cfd621d36dfac9d339c4cd00.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Disconnected.mp3"
+dest_files=[ "res://.import/Disconnected.mp3-a22908f4cfd621d36dfac9d339c4cd00.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

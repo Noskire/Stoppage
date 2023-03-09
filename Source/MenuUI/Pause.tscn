@@ -1,0 +1,340 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Source/MenuUI/Pause.gd" type="Script" id=2]
+[ext_resource path="res://Assets/upgradeoff.png" type="Texture" id=3]
+
+[node name="Pause" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247059, 0.415686, 0.984314, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -143.5
+margin_top = 93.2342
+margin_right = 143.5
+margin_bottom = 156.234
+text = "Upgrades:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -388.591
+margin_right = 400.0
+margin_bottom = 111.409
+rect_min_size = Vector2( 800, 500 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox1" type="HBoxContainer" parent="Grid"]
+margin_top = 23.0
+margin_right = 800.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 600, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Trait" type="Label" parent="Grid/HBox1"]
+margin_left = 13.0
+margin_top = 6.0
+margin_right = 361.0
+margin_bottom = 69.0
+size_flags_horizontal = 10
+text = "Bullet Speed"
+
+[node name="Levels" type="HBoxContainer" parent="Grid/HBox1"]
+margin_left = 365.0
+margin_right = 800.0
+margin_bottom = 75.0
+size_flags_horizontal = 6
+
+[node name="Rect1" type="TextureRect" parent="Grid/HBox1/Levels"]
+margin_right = 48.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect2" type="TextureRect" parent="Grid/HBox1/Levels"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect3" type="TextureRect" parent="Grid/HBox1/Levels"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect4" type="TextureRect" parent="Grid/HBox1/Levels"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect5" type="TextureRect" parent="Grid/HBox1/Levels"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="LevelUp" type="Button" parent="Grid/HBox1/Levels"]
+margin_left = 260.0
+margin_right = 435.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 175, 75 )
+text = "LVLUP"
+
+[node name="HBox2" type="HBoxContainer" parent="Grid"]
+margin_top = 149.0
+margin_right = 800.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 600, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Trait" type="Label" parent="Grid/HBox2"]
+margin_top = 6.0
+margin_right = 361.0
+margin_bottom = 69.0
+size_flags_horizontal = 10
+text = "Player Speed"
+
+[node name="Levels" type="HBoxContainer" parent="Grid/HBox2"]
+margin_left = 365.0
+margin_right = 800.0
+margin_bottom = 75.0
+size_flags_horizontal = 6
+
+[node name="Rect1" type="TextureRect" parent="Grid/HBox2/Levels"]
+margin_right = 48.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect2" type="TextureRect" parent="Grid/HBox2/Levels"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect3" type="TextureRect" parent="Grid/HBox2/Levels"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect4" type="TextureRect" parent="Grid/HBox2/Levels"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect5" type="TextureRect" parent="Grid/HBox2/Levels"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="LevelUp" type="Button" parent="Grid/HBox2/Levels"]
+margin_left = 260.0
+margin_right = 435.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 175, 75 )
+text = "LVLUP"
+
+[node name="HBox3" type="HBoxContainer" parent="Grid"]
+margin_top = 275.0
+margin_right = 800.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 600, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Trait" type="Label" parent="Grid/HBox3"]
+margin_left = 15.0
+margin_top = 6.0
+margin_right = 361.0
+margin_bottom = 69.0
+size_flags_horizontal = 10
+text = "Firing Speed"
+
+[node name="Levels" type="HBoxContainer" parent="Grid/HBox3"]
+margin_left = 365.0
+margin_right = 800.0
+margin_bottom = 75.0
+size_flags_horizontal = 6
+
+[node name="Rect1" type="TextureRect" parent="Grid/HBox3/Levels"]
+margin_right = 48.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect2" type="TextureRect" parent="Grid/HBox3/Levels"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect3" type="TextureRect" parent="Grid/HBox3/Levels"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect4" type="TextureRect" parent="Grid/HBox3/Levels"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect5" type="TextureRect" parent="Grid/HBox3/Levels"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="LevelUp" type="Button" parent="Grid/HBox3/Levels"]
+margin_left = 260.0
+margin_right = 435.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 175, 75 )
+text = "LVLUP"
+
+[node name="HBox4" type="HBoxContainer" parent="Grid"]
+margin_top = 401.0
+margin_right = 800.0
+margin_bottom = 476.0
+rect_min_size = Vector2( 600, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Trait" type="Label" parent="Grid/HBox4"]
+margin_left = 86.0
+margin_top = 6.0
+margin_right = 361.0
+margin_bottom = 69.0
+size_flags_horizontal = 10
+text = "Time Stop"
+
+[node name="Levels" type="HBoxContainer" parent="Grid/HBox4"]
+margin_left = 365.0
+margin_right = 800.0
+margin_bottom = 75.0
+size_flags_horizontal = 6
+
+[node name="Rect1" type="TextureRect" parent="Grid/HBox4/Levels"]
+margin_right = 48.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect2" type="TextureRect" parent="Grid/HBox4/Levels"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect3" type="TextureRect" parent="Grid/HBox4/Levels"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect4" type="TextureRect" parent="Grid/HBox4/Levels"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Rect5" type="TextureRect" parent="Grid/HBox4/Levels"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 75.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="LevelUp" type="Button" parent="Grid/HBox4/Levels"]
+margin_left = 260.0
+margin_right = 435.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 175, 75 )
+text = "LVLUP"
+
+[node name="Unpause" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -320.0
+margin_right = -51.0
+margin_bottom = -251.0
+rect_min_size = Vector2( 400, 100 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -180.0
+margin_right = 200.0
+margin_bottom = -80.0
+rect_min_size = Vector2( 400, 100 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_up" from="Grid/HBox1/Levels/LevelUp" to="." method="_on_Trait1_button_up"]
+[connection signal="button_up" from="Grid/HBox2/Levels/LevelUp" to="." method="_on_Trait2_button_up"]
+[connection signal="button_up" from="Grid/HBox3/Levels/LevelUp" to="." method="_on_Trait3_button_up"]
+[connection signal="button_up" from="Grid/HBox4/Levels/LevelUp" to="." method="_on_Trait4_button_up"]
+[connection signal="button_up" from="Unpause" to="." method="_on_Unpause_button_up"]
+[connection signal="button_up" from="Menu" to="." method="_on_Menu_button_up"]

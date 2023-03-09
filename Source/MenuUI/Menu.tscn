@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/space_bg.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Source/MenuUI/Menu.gd" type="Script" id=3]
+[ext_resource path="res://Assets/title_theme.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/SFX/menu5.wav" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "START"
+length = 30.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.5, 15, 22.5, 30 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1152, 648 ), Vector2( 768, 648 ), Vector2( 768, 432 ), Vector2( 1152, 432 ), Vector2( 1152, 648 ) ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 1152, 648 )
+scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 1 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -472.0
+margin_right = 472.0
+margin_bottom = 505.0
+theme = ExtResource( 4 )
+text = "Stoppage"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -60.5946
+margin_right = 200.0
+margin_bottom = 39.4054
+rect_min_size = Vector2( 400, 100 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = 59.6136
+margin_right = 400.0
+margin_bottom = 122.614
+rect_min_size = Vector2( 800, 0 )
+text = "Highscore: %s"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 578.5
+margin_top = 678.574
+margin_right = 1378.5
+margin_bottom = 878.574
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="HBoxContainer" parent="Menu"]
+margin_right = 800.0
+margin_bottom = 98.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterVol" type="Label" parent="Menu/Audio"]
+margin_top = 17.0
+margin_right = 350.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "Master Vol."
+
+[node name="MasterVolSlider" type="HSlider" parent="Menu/Audio"]
+margin_left = 400.0
+margin_top = 33.0
+margin_right = 800.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_vertical = 4
+min_value = -50.0
+max_value = 0.0
+value = -10.0
+
+[node name="BgScroll" type="HBoxContainer" parent="Menu"]
+margin_top = 102.0
+margin_right = 800.0
+margin_bottom = 200.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/BgScroll"]
+margin_top = 17.0
+margin_right = 350.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "Bg Scroll"
+
+[node name="BgCheck" type="CheckBox" parent="Menu/BgScroll"]
+margin_left = 400.0
+margin_right = 800.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_vertical = 0
+pressed = true
+
+[node name="Creator" type="Label" parent="."]
+margin_left = 1410.4
+margin_top = 977.528
+margin_right = 1865.4
+margin_bottom = 1040.53
+text = "Creator: Noskire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="BgMovement" type="AnimationPlayer" parent="."]
+autoplay = "START"
+anims/START = SubResource( 1 )
+
+[connection signal="button_up" from="Play" to="." method="_on_Play_button_up"]
+[connection signal="value_changed" from="Menu/Audio/MasterVolSlider" to="." method="_on_MasterVolSlider_value_changed"]
+[connection signal="toggled" from="Menu/BgScroll/BgCheck" to="." method="_on_BgCheck_toggled"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="start_game"]
